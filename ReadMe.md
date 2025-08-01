@@ -2,8 +2,8 @@
 # Application Description
 
 **Application Scenario: Human Resources (HR) Portal**
-    
-    This project implements a comprehensive HR portal for a large organization. The portal manages a wide range of HR-related data, including Employees, Trainers, Organizations, Teams, Projects, Payroll, Performance, Employment Data, Records, Disciplinary Actions, and Performance Reviews. The system is designed to support complex queries and reporting, making it suitable for both day-to-day HR operations and strategic decision-making.
+
+This project implements a comprehensive HR portal for a large organization. The portal manages a wide range of HR-related data, including Employees, Trainers, Organizations, Teams, Projects, Payroll, Performance, Employment Data, Records, Disciplinary Actions, and Performance Reviews. The system is designed to support complex queries and reporting, making it suitable for both day-to-day HR operations and strategic decision-making.
     
 **Data Stored:**
     - Employee personal and employment details
