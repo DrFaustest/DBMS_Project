@@ -1,0 +1,73 @@
+Table Organization {
+  OrganizationID int [pk]
+  Name varchar
+}
+
+Table Department {
+  DepartmentID int [pk]
+  Name varchar
+  OrganizationID int [ref: > Organization.OrganizationID]
+}
+
+Table Employee {
+  EmployeeID int [pk]
+  FirstName varchar
+  LastName varchar
+  DepartmentID int [ref: > Department.DepartmentID]
+  HireDate date
+  Email varchar [unique]
+}
+
+Table Trainer {
+  TrainerID int [pk]
+  EmployeeID int [unique, ref: > Employee.EmployeeID]
+  Specialty varchar
+}
+
+Table Team {
+  TeamID int [pk]
+  Name varchar
+  DepartmentID int [ref: > Department.DepartmentID]
+}
+
+Table EmployeeTeam {
+  EmployeeID int [ref: > Employee.EmployeeID]
+  TeamID int [ref: > Team.TeamID]
+  Note: 'Composite PK (EmployeeID, TeamID)'
+}
+
+Table Project {
+  ProjectID int [pk]
+  Name varchar
+  DepartmentID int [ref: > Department.DepartmentID]
+  StartDate date
+  EndDate date
+}
+
+Table EmployeeProject {
+  EmployeeID int [ref: > Employee.EmployeeID]
+  ProjectID int [ref: > Project.ProjectID]
+  Note: 'Composite PK (EmployeeID, ProjectID)'
+}
+
+Table Payroll {
+  PayrollID int [pk]
+  EmployeeID int [ref: > Employee.EmployeeID]
+  Salary decimal
+  PayDate date
+}
+
+Table PerformanceReview {
+  ReviewID int [pk]
+  EmployeeID int [ref: > Employee.EmployeeID]
+  ReviewDate date
+  Score int
+  Comments varchar
+}
+
+Table DisciplinaryAction {
+  ActionID int [pk]
+  EmployeeID int [ref: > Employee.EmployeeID]
+  ActionDate date
+  Description varchar
+}
